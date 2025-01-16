@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+=
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, #232029, #231e2d);
+  color: #ddd8e4;
+}
+
+/* Ensure there's no space above the header */
+header {
+  background-color: #1e1b26;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50; /* Ensures it stays above other content */
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+nav img {
+  height: 2rem;
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ddd8e4;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f4c33d;
+}
+
+nav ul li a:focus {
+  outline: none;
+  border-bottom: 2px solid #f4c33d;
+}
+
+nav ul li a .icon {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Mobile Menu Toggle Button */
+.toggle-button {
+  display: none; /* Default: hidden */
+  flex-direction: column;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.toggle-button span {
+  width: 25px;
+  height: 3px;
+  background: #ddd8e4;
+  border-radius: 5px;
+}
+
+/* Mobile View: Show the Toggle Button */
+@media (max-width: 768px) {
+  .toggle-button {
+    display: flex; /* Visible only on mobile */
+  }
+
+  nav ul {
+    display: none; /* Hidden on mobile by default */
+    flex-direction: column;
+    background-color: #1e1b26;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul.show {
+    display: flex; /* Show the menu when the toggle button is clicked */
+  }
+
+  nav ul li {
+    margin: 1rem 0;
+  }
+}
+
+/* Adjust content below the fixed navbar */
+main {
+  margin-top: 4rem; /* Adds space to ensure content doesn't go under the fixed navbar */
+  text-align: center;
+  margin: 5rem auto;
+}
+
+main img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  filter: drop-shadow(0 0 4px #f6c363);
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 3rem auto;
+  color: #ede9f3;
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+p a {
+  color: #f4c33d;
+  text-decoration: none;
+  padding-bottom: 0.05rem;
+  border-bottom: 2px solid #f4c33d;
+}
+
+p a:hover,
+p a:active {
+  color: #bd3df4;
+  border-color: #bd3df4;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .social-icons {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .social-icon {
+    font-size: 2.5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .text-lg {
+    font-size: 1.1rem;
+  }
+
+  .main-content p {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
