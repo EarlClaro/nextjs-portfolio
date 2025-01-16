@@ -5,7 +5,6 @@ import Intro from './components/Intro';
 export default function Home() {
   return (
     <main>
-      <Header />
       <Intro />
       
     </main>

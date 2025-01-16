@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
-import authorImage from '/claro.png';
+import authorImage from 'public/claro.png';
 import styles from './intro.module.css';
 
 export default function Intro() {
