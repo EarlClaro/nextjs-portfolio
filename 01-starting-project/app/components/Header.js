@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';  // Import both at once
 import Link from 'next/link';
 import { AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser } from 'react-icons/ai';
 import { CgFileDocument } from 'react-icons/cg';
@@ -7,22 +7,32 @@ import { FaLinkedin } from 'react-icons/fa';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  // Ensures code is only executed on the client side
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
     console.log("Menu state:", !isMenuOpen); 
   };
 
+  if (!isClient) {
+    // Return a simple loading state or placeholder during SSR
+    return <div>Loading...</div>;
+  }
+
   return (
     <header className="bg-white dark:bg-gray-900 sticky top-0 z-50 shadow-lg">
       <nav className="flex justify-between items-center p-4">
         {/* Logo */}
         <div className="logo">
-        <Link href="/">
+          <Link href="/">
             <img src="/logo.png" alt="Logo" style={{ width: '250px', height: 'auto' }} />
-        </Link>
+          </Link>
         </div>
-
 
         {/* Toggle Button */}
         <div
@@ -53,7 +63,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-          <a
+            <a
               href="https://drive.google.com/file/d/1_eP3Y8CP9Mgw5lR_8378EuwS7nqgDztr/view"
               target="_blank"
               rel="noreferrer"

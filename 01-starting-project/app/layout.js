@@ -1,5 +1,6 @@
 import './globals.css';
 import Header from './components/Header';  
+import React, { Suspense } from 'react';
 
 export const metadata = {
   title: 'My Portfolio',
