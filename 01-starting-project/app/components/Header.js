@@ -19,10 +19,7 @@ export default function Header() {
     console.log("Menu state:", !isMenuOpen); 
   };
 
-  if (!isClient) {
-    // Return a simple loading state or placeholder during SSR
-    return <div>Loading...</div>;
-  }
+
 
   return (
     <header className="bg-white dark:bg-gray-900 sticky top-0 z-50 shadow-lg">
@@ -34,7 +31,7 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Toggle Button */}
+        
         <div
           className="toggle-button"
           onClick={toggleMenu}
@@ -45,7 +42,7 @@ export default function Header() {
           <span></span>
         </div>
 
-        {/* Navigation Links */}
+        
         <ul className={`nav-links ${isMenuOpen ? 'show' : ''}`}>
           <li>
             <Link href="/">
@@ -53,7 +50,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/about">
+            <Link href="#about">
               <AiOutlineUser className="icon" /> About
             </Link>
           </li>

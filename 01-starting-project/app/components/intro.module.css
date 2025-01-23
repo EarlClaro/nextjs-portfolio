@@ -30,6 +30,7 @@
     justify-content: flex-start;
     gap: 1rem; /* Small space between each paragraph */
     width: 100%;
+    
   }
   
   .title {
@@ -55,7 +56,8 @@
     line-height: 1;
     text-align: justify;
     color: white;
-    margin-right: 10px;
+    margin-right: auto;
+    
   }
   
   /* Typing Effect Styling */

@@ -8,7 +8,7 @@ export default function Intro() {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        {/* Left Column: Image */}
+        
         <div className={styles.imageContainer}>
           <Image
             src={authorImage}
@@ -18,7 +18,7 @@ export default function Intro() {
           />
         </div>
 
-        {/* Right Column: Text Content */}
+        
         <div className={styles.textContainer}>
           <h2 className={styles.title}>Hi There! 👋🏻</h2>
           <h2 className={styles.name}>
